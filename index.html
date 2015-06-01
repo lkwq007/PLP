@@ -30,14 +30,14 @@
     .bubbleChart {
       min-width: 100px;
       max-width: 900px;
-      height: 650px;
+      height: 610px;
       margin: 0 auto;
   }
   @media (min-width: 1400px) {
   .bubbleChart {
       min-width: 100px;
       max-width: 1300px;
-      height: 800px;
+      height: 750px;
       margin: 0 auto;
     }
   }
@@ -45,7 +45,7 @@
   .bubbleChart {
       min-width: 100px;
       max-width: 1800px;
-      height: 950px;
+      height: 940px;
       margin: 0 auto;
     }
   }
@@ -59,13 +59,19 @@
       position: fixed;
     }
     body {
-  display: block;
-  margin: 0px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-}
+      display: block;
+      margin: 0px;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px;
+    }
+    .title {
+      font-size: 28px;
+      color: #4d4d4d;
+      font-family: Source Sans Pro, sans-serif;
+      z-index: 10;
+    }
   </style>
 </head>
 <body>
@@ -77,6 +83,9 @@
     });
     document.body.appendChild(pattern.canvas())
 </script>
+<div class="title">
+<center>Programming Languages Ratings</center>
+</div>
 <div class="bubbleChart"/>
 </body>
 </html>

@@ -57,7 +57,12 @@ d3.svg.BubbleChart.define("lines", function (options) {
       var fn = original.apply(this, arguments);
       $.each(options.format, function (i, f) {
         var tNode = d3.select(node.selectAll("text")[0][i]);
-        tNode.classed(f.classed).text(function (d) {return d.item[f.textField];})
+        tNode.classed(f.classed).text(function (d) {
+          if(isNaN(d.item[f.textField]))
+              return d.item[f.textField];
+            else
+              return d.item[f.textField]+"%";
+          })
           .transition().duration(self.getOptions().transitDuration)
           .style(f.style)
           .attr(f.attr);
@@ -76,7 +81,12 @@ d3.svg.BubbleChart.define("lines", function (options) {
           .style(f.style)
           .attr(f.attr);
         f.classed !== undefined && tNode.classed(f.classed);
-        f.textField !== undefined && tNode.text(function (d) {return d.item[f.textField];});
+        f.textField !== undefined && tNode.text(function (d) {
+          if(isNaN(d.item[f.textField]))
+              return d.item[f.textField];
+            else
+              return d.item[f.textField]+"%";
+        });
       });
       return fn;
     };
